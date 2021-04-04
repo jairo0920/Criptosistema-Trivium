@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="apn_mainContainer" fx:id="apn_mainContainer" prefHeight="608.0" prefWidth="662.0" stylesheets="@resource/css/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxtrivium.FXMLDocumentController">
+   <children>
+      <TitledPane fx:id="tpn_configContainer" prefHeight="252.0" prefWidth="662.0" text="Configuración" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane fx:id="apn_configContainer" minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="660.0">
+               <children>
+                  <GridPane fx:id="gpn_configContainer" layoutX="7.0" prefHeight="226.0" prefWidth="652.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="210.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="479.0" minWidth="10.0" prefWidth="405.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="479.0" minWidth="10.0" prefWidth="90.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lbl_key" text="Clave:" />
+                        <Label fx:id="lbl_vi" text="Vector de Inicialización:" GridPane.rowIndex="1" />
+                        <Label fx:id="lbl_text" text="Texto:" GridPane.rowIndex="2" />
+                        <Label fx:id="lbl_inputFile" text="Archivo:" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_key" GridPane.columnIndex="1" />
+                        <TextField fx:id="txt_vi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="txta_text" prefHeight="96.0" prefWidth="387.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                        <CheckBox fx:id="ckb_text" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" selected="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <TextField fx:id="txt_inputFile" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button fx:id="btn_inputFile" disable="true" mnemonicParsing="false" onAction="#handleBtn_inpuFile" prefHeight="26.0" prefWidth="30.0" styleClass="button-inpuFile" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <Label fx:id="lbl_output" text="Salida:" GridPane.rowIndex="5" />
+                        <Pane fx:id="pn_radioButtonConatiner" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <RadioButton fx:id="rb_hex" layoutY="5.0" mnemonicParsing="false" selected="true" text="Hexadecimal">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tgrb_output" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rb_base64" layoutX="125.0" layoutY="7.0" mnemonicParsing="false" text="Base64" toggleGroup="$tgrb_output" />
+                              <RadioButton fx:id="rb_binary" layoutX="214.0" layoutY="8.0" mnemonicParsing="false" text="Binario" toggleGroup="$tgrb_output" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TextArea fx:id="txta_output" editable="false" layoutY="264.0" prefHeight="281.0" prefWidth="662.0" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="264.0" />
+      <ButtonBar fx:id="bpn_buttonContainer" layoutX="137.0" layoutY="554.0" prefHeight="40.0" prefWidth="345.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="554.0">
+         <buttons>
+            <Button fx:id="btn_clear" onAction="#handleBtn_clear" prefHeight="42.0" prefWidth="99.0" text="_Limpiar" />
+            <Button fx:id="btn_encript" onAction="#handleBtn_cipher" prefHeight="42.0" prefWidth="99.0" text="_Encriptar" />
+            <Button fx:id="btn_desencript" onAction="#handleBtn_descipher" prefHeight="42.0" prefWidth="99.0" text="_Desencriptar" />
+            <Button fx:id="btn_save" onAction="#handleBtn_save" prefHeight="42.0" prefWidth="99.0" text="_Guardar" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
