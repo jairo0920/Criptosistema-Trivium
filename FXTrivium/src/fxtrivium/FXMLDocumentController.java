@@ -17,8 +17,8 @@
  */
 package fxtrivium;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.File;
@@ -118,11 +118,12 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        this.btn_clear.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.ERASER));
-        this.btn_encript.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.LOCK));
-        this.btn_desencript.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.LOCK));
-        this.btn_inputFile.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.FILE));
-        this.btn_save.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.SAVE));
+//        this.btn_clear.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.ERASER));
+//        this.btn_encript.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.LOCK));
+//        this.btn_desencript.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.LOCK));
+//        this.btn_inputFile.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.FILE));
+//        this.btn_save.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.SAVE));
+
         
         this.ckb_text.selectedProperty().addListener((observ, oldValue, newValue) -> {
             this.txt_inputFile.setDisable(newValue);
